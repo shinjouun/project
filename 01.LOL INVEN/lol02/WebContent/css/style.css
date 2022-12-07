@@ -1,0 +1,561 @@
+@charset "EUC-KR";
+@font-face {
+    font-family: 'HeirofLightBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+a{text-decoration: none;}
+
+.index_cpnamecolor img
+{
+	width:90px;
+	height:90px;
+	border:2px solid ; 
+	padding:4px;
+	box-shadow:0px 0px 2px 2px #595959;
+}
+.index_cpnamecolor a
+{
+	text-color : #060A41;
+	font-size:18px;
+	
+	
+}
+.index_cpnamecolor a:hover
+{
+	color : red;
+}
+.index_cpnamecolor a:hover 
+{
+	text-decoration:underline;
+}
+
+/*챔피언 평가 테두리 수정*/
+.index_cp_view td
+{
+	padding-top:20px;
+	padding-bottom:10px;
+}
+.index_cp_view img
+{
+	width:90px;
+	height:90px;
+	border:2px solid ; 
+	padding:4px;
+	box-shadow:0px 0px 2px 2px #595959;
+	
+}
+/*
+챔피언 목록 테이블 클래스
+*/
+.picture_frame_tbl
+{
+	width:100%; 
+	height:350px;
+	background-color: #fafafa;
+	border-top: 1px solid #444444;
+	border-bottom: 1px solid #444444;
+    border-collapse: collapse;
+}
+/*cpreview목록*/
+.toplist td
+{
+	margin-top:20px;
+}
+.toplist img
+{
+	width:90px;
+	height:90px;
+	border:2px solid ; 
+	padding:4px;
+	box-shadow:0px 0px 2px 2px #595959;
+}
+/*div 공백*/
+.divnull
+{
+	background-color:#F1F0F1; 
+	opacity:0.9;
+}
+				
+
+/*테이블 간격 없애기*/
+.homediv
+{
+	margin : -5px 0px 0px -4px ;
+
+}
+
+/*
+내부 컨텐츠 테이블 클래스
+*/
+.mother_frame_tbl
+{
+	width : 100%;
+	margin : 0px;
+	bordercolor : #fafafa;
+}
+/*아이콘 사진*/
+.iconthe
+{
+	font-size:18px;
+}
+/*아이콘 이름*/
+.iconthe
+{
+	color:#600562;
+}
+
+.iconthe:hover
+{
+	
+	font-size:23px;
+}
+.logo a
+{
+	font-size:50px; 
+	font-weight:bold;
+	 text-align: center;
+}
+/*네비게이션 메뉴*/
+.topmenu
+{
+	opacity:0.9;
+	background-color:#948093;
+	margin : 0px 0px 0px 0px ;
+	padding : 0 ;
+}
+.topmenu a
+{	
+	padding: 5px 5px;
+	box-shadow: 2px 2px 2px #2833BE;
+	size:10px;
+	border-radius:3px 3px 3px 3px;
+	font-size:16px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color: #060A41;
+	margin-left:10px;
+}
+.topmenu a:hover
+{
+	background-color:#9DAED0;
+}
+
+/*왼쪽 네비게이션*/
+.leftmenu
+{
+	opacity:0.9;
+	background-color:#948093;
+	text-align:center;
+}
+
+.leftmenu  a
+{
+	line-height:60px;
+	font-size:25px;
+	font-weight:bold;
+	color:#060A41;
+}
+
+.leftmenu a:hover
+{
+ color:#D6D6E0;
+ 
+}
+.leftmenu a::after
+{
+	/*after가상요소*/
+	display:block;/*a요소를 블록 요소라고 선언*/
+	align:center; /*카테고리 메뉴 밑줄의 크기를
+	동일하게 주기위해 */
+	content: '';
+	border-bottom: solid 2px #00B2CF;
+	transform: scaleX(0);/*크기를 0으로 줌으로써 평상시엔 밑줄 없음*/
+	transition: transform 250ms ease-in-out; /*변형 방식*/
+}
+
+.leftmenu a:hover:after 
+{
+   transform: scaleX(1);/*a 속성에 hover시 기존 크기로*/
+}
+
+
+
+#cpdetail
+{
+	position:fixed;
+}
+
+/*홈페이지 메인 배경이미지*/
+body
+{
+	background-image : url('../img/background.jpg');
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+	font-family: 'HeirofLightBold';
+}
+
+/* 챔피언 배경 */
+.cpbackground 
+{
+        margin: 0 ;
+        width: 800px;
+        height: 100vh;
+        background: linear-gradient(
+            to left,
+            rgba(20, 20, 20, 0) 10%,
+            rgba(20, 20, 20, 0.25) 25%,
+            rgba(20, 20, 20, 0.5) 50%,
+            rgba(20, 20, 20, 0.75) 75%,
+            rgba(20, 20, 20, 1) 100%
+          ), url("../img/garen_0.jpg");
+        background-size: cover;
+        opacity:1
+}
+
+/*   챔피언목록페이지의 목록*/
+
+.cpinfomenu
+{
+	padding: 5px 5px;
+	size:10px;
+	border-radius:3px 3px 3px 3px;
+	font-size:16px;
+	font-weight:bold;
+	
+	background-color: #060A41;
+	opacity:0.9;
+	margin-left:0px;
+	
+}
+
+.cpinfomenu a
+{
+	color:white;
+}
+.cpinfomenu a:hover
+{
+	background-color:#9DAED0;
+}
+/*cplist-챔피언목록*/
+
+.inner td 
+{
+	padding: 5px 5px;
+	box-shadow: 2px 2px 2px 2px #2833BE;
+	size:10px;
+	border-radius:3px 3px 3px 3px;
+	font-size:16px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color: #060A41;
+	margin-left:10px;
+}
+.inner td a
+{
+	color:#ffffff;
+	
+}
+.inner td a:hover
+{
+	background-color:#9DAED0;
+}
+
+/*역할필터 */
+.inner_a
+{
+	background:#F1F0F1;
+}
+
+.inner_a  a
+{
+	font-size:18px;
+	color:#010329;
+	font-wight:bold;
+	
+}
+/* 챔피언목록 이미지*/
+.list_image
+{
+	background:#fafafa;
+    border-collapse: collapse;
+	
+}
+
+.list_image img
+{
+	width:90px;
+	height:90px;
+	border:2px solid ; 
+	padding:4px;
+	box-shadow:0px 0px 2px 2px #595959;
+}
+.search input 
+{
+	width: 20%;
+	padding: 5px 5px;
+	margin: 5px 0;
+	box-sizing: border-box;
+	}
+	
+.search input[type="text"] 
+{
+	border: solid 2px #B21016;
+	border-radius: 8px;
+}
+.search a
+{
+	font-size:15px;
+	color:#010431;
+}
+.search a:hover
+{
+	color:red;
+}
+
+
+/*로그인 테두리 -  로그인 페이지*/
+.loginborder
+{
+	border: 4px dashed #bcbcbc;
+	width : 450px;
+	height : 250px;
+	padding-top : 80px;
+}
+/*  로그인 버튼*/
+.loginborder a
+{
+	padding: 5px 5px;
+	size:8px;
+	border-radius:3px 3px 3px 3px;
+	font-size:14px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color: #060A41;
+	margin-left:10px;	
+}
+
+.loginborder a:hover
+{
+background-color: #44000A;
+}
+/*회원가입*/
+
+#join
+{
+	background-color: #FAFAFA;
+	height : 800px;
+	padding-top : 100px;
+}
+#join tr th
+{
+
+	background:grey;
+	color:#010329;
+}
+
+tr
+{
+	color:#091088;
+}
+
+
+#id
+{
+			width:30%;
+			padding:5px 5px;
+			margin: 3px 0;
+			box-sizing: border-box;
+			border-radius:3px 3px 3px 3px;
+			border: none;
+			background-color: #CBCFD8;
+			
+}
+/*중복검사버튼*/
+input[type=button]
+ { 
+ 	margin-left: 3px ;
+ 	color:white;
+ 	background-color:#37080F;
+	border:solid 2px  black; 
+	border-radius:3px 3px 3px 3px;
+	
+	
+	}
+input[type=button]:hover
+{
+	color:#37080F;
+	background-color:#FBCFD0;
+}
+#pw
+{	
+			width:30%;
+			padding:5px 5px;
+			margin: 3px 0;
+			box-sizing: border-box;
+			border: none;
+			background-color: #CBCFD8;
+			border-radius:3px 3px 3px 3px;
+			
+}
+
+#pwcheck
+{
+			width:30%;
+			padding:5px 5px;
+			margin: 3px 0;
+			box-sizing: border-box;
+			border: none;
+			background-color: #CBCFD8;
+			border-radius:3px 3px 3px 3px;
+		
+}
+
+#nickname
+{
+		width:30%;
+		padding:5px 5px;
+		margin: 3px 0;
+		box-sizing: border-box;
+		border: none;
+		background-color: #CBCFD8;
+		border-radius:3px 3px 3px 3px;
+	
+}
+
+#name
+{
+		width:30%;
+		padding:5px 5px;
+		margin: 3px 0;
+		box-sizing: border-box;
+		border: none;
+		background-color: #CBCFD8;
+		border-radius:3px 3px 3px 3px;
+		
+}
+
+#num1
+{
+		width:20%;
+		padding:5px 5px;
+		margin: 3px 0;
+		box-sizing: border-box;
+		border: none;
+		background-color: #CBCFD8;
+		border-radius:3px 3px 3px 3px;
+	
+}
+#num2
+{
+		width:30%;
+		padding:5px 5px;
+		margin: 3px 0;
+		box-sizing: border-box;
+		border: none;
+		background-color: #CBCFD8;
+		border-radius:3px 3px 3px 3px;
+		
+}
+#num3
+{
+		width:30%;
+		padding:5px 5px;
+		margin: 3px 0;
+		box-sizing: border-box;
+		border: none;
+		background-color: #CBCFD8;
+		border-radius:3px 3px 3px 3px;
+		
+}
+#mail1
+{
+	width:30%;
+	padding:5px 5px;
+	margin: 3px 0;
+	box-sizing: border-box;
+	border: none;
+	background-color: #CBCFD8;
+	border-radius:3px 3px 3px 3px;
+		
+}
+#mail2
+{
+	width:30%;
+	padding:5px 5px;
+	margin: 3px 0;
+	box-sizing: border-box;
+	border: none;
+	background-color: #CBCFD8;
+	border-radius:3px 3px 3px 3px;
+	
+}
+#center
+{
+	width:30%;
+	padding:5px 5px;
+	margin: 3px 0;
+	box-sizing: border-box;
+	border: none;
+	background-color: #CBCFD8;
+	border-radius:3px 3px 3px 3px;
+	
+}
+
+
+/*회원가입 취소 */
+
+.joinbutton td
+{
+padding-top:10px;
+}
+.joinbutton td a
+{
+	
+	padding: 5px 5px;
+	box-shadow: 2px 2px 2px #2833BE;
+	size:10px;
+	border-radius:3px 3px 3px 3px;
+	font-size:16px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color: #060A41;
+	margin-left:10px;
+}
+.joinbutton td a:hover
+{
+	background-color:#9DAED0;
+	color:#44000A;
+	border:solid 2px  #021741; 
+	
+}
+
+/* footer 하단 고정 [S] */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+footer {
+    width: 100%;
+    border-top: solid 2px #808080;
+    height:100px; /* footer의 높이 */
+    background-color: #FaFaFa;
+    bottom: 0;
+    left: 0;
+    text-align : center;
+    padding-top : 10px;
+}
+/* footer 하단 고정 [E] */
+
+
+table, td{
+	border-collapse : collapse; 
+	border-spacing : 0;
+	border-style : none;
+	padding : 0px;
+}
+

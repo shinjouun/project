@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import="lol.vo.*"  %>
+<%@ page import="lol.dbms.*" %>
+<%@ page import="java.io.*"%>
+<%
+UserVO loginVO = (UserVO)session.getAttribute("logon");
+
+String cpno[] = request.getParameter("cpno").split(","); // 20,19,18
+
+if(loginVO == null || !loginVO.getUadmin().equals("A"))
+{
+	response.sendRedirect("../main/index.jsp");
+	return;
+}
+
+DBManager dbms = new DBManager();
+dbms.DBOpen();
+String sql = "";
+for(int i = 0 ; i < cpno.length ; i++)
+{
+	sql = "delete from review where cpno = " + cpno[i];
+	dbms.RunSQL(sql);
+	
+	sql = "delete from position where cpno = " + cpno[i];
+	dbms.RunSQL(sql);
+	
+	sql = "delete from champion where cpno = " + cpno[i];
+	dbms.RunSQL(sql);
+}
+dbms.DBClose();
+
+out.print("SUCCESS");
+%>

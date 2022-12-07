@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>League of Legend Inven</title>
+		<link rel="stylesheet" href="css/style.css"/>	
+		<script src="jquery-3.6.0.js"></script>
+	</head>
+	<body>
+	<script>
+		function DoModify()
+		{
+			window.open("uinfomodify.html", "_uinfomodify",
+			"width=538,height=360,left=700,top=400");	
+		}
+		function DoQuit()
+		{
+			window.open("uquitcheck.html", "_uquitcheck",
+			"width=500,height=200,left=800,top=500");	
+		}
+	</script>
+		<table  width="900px" align="center" style="border-collapse :collapse;" >
+			<tr>
+				<td align="center">
+					<a href="index.html">
+					<div style="display:block;">
+					<img src="img/lol1.png" width="800" height="200" align="middle" style="">
+					</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		<table  border="0" width="1200px" align="center" style="border-collapse :collapse;">
+			<tr>
+				<td colspan="3" style="text-align:right;">
+				<div class="topmenu" style="height:32px;padding-top:10px;">
+					<a href="join.html">회원가입</a>
+					<a href="login.html">로그인</a>
+					<a href="javascript:DoModify();">회원정보수정</a>
+					<a href="javascript:DoQuit();">회원탈퇴</a>	
+					&nbsp;&nbsp;
+				</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="leftmenu" style="width:200px;" valign="top">
+						<a href="index.html">홈</a>
+						<br>
+						<a href="cplist.html">챔피언 목록</a>
+						<br>
+						<a href="cpreview.html">챔피언 평가</a>		
+						<br>
+				</td>
+				<td valign="top">
+					<!-- 컨텐츠 출력 되는곳 -------------------------- -->
+					<div class="homediv">
+						<table class="mother_frame_tbl">
+							<tr>
+								<td>
+									<table class="picture_frame_tbl" > 
+										<tr>
+											<td colspan="5" align="right" style="height:35px; border-bottom: 1px solid #444444;"><a class="iconthe" href=cp.html>더보기 +</a></td>
+										</tr>
+										<tr class="index_cpnamecolor">
+											<td align="center"><a href="cpinfo.html"><img src="img/garen_1.jpg"></a><a href="cpinfo.html"><br>가렌</a></td>
+											<td align="center"><a href="cpinfo.html"><img src="img/gragas_1.jpg"></a><a href="cpinfo.html"><br>그라가스</a></td>
+											<td align="center"><a href="cpinfo.html"><img src="img/darius_1.jpg"></a><a href="cpinfo.html"><br>다리우스</a></td>
+											<td align="center"><a href="cpinfo.html"><img src="img/lux_1.jpg"></a><a href="cpinfo.html"><br>럭스</a></td>
+											<td align="center"><a href="cpinfo.html"><img src="img/lulu_1.jpg"></a><a href="cpinfo.html"><br>룰루</a></td>
+										</tr>
+										<tr class="index_cpnamecolor">
+											<td align="center"><a href="cpinfo.html"><img src="img/missFortune_1.jpg"></a><a href="cpinfo.html"><br>미스포츈</a></td>
+											<td align="center"><a href="cpinfo.html"><img src="img/vayne_1.jpg"></a><a href="cpinfo.html"><br>베인</a></td>
+											<td align="center"><a href="cpinfo.html"><img src="img/sivir_1.jpg"></a><a href="cpinfo.html"><br>시비르</a></td>
+											<td align="center"><a href="cpinfo.html"><img src="img/jayce_1.jpg"></a><a href="cpinfo.html"><br>제이스</a></td>
+											<td align="center"><a href="cpinfo.html"><img src="img/kennen_1.jpg"></a><a href="cpinfo.html"><br>케넨</a></td>
+										</tr>
+									</table>
+									<table border="0" style="width:100%; height:20px; background-color: white;">
+										<tr>
+											<td colspan="5" align="right" style="height:35px; border-bottom: 1px solid #444444;"><a class="iconthe" href=cpreview.html>더보기 +</a></td>
+										</tr>
+									</table>
+									<table  border="0" style="width:100%; height:350px; background-color: white;" >
+										<tr class="index_cp_view">
+											<td width="150px" align="center"><a href="cpreview.html"><img src="img/garen_1.jpg"></a></td>
+											<td align="left"><a href="cpreview.html">가렌에 대한 평가입니다.</a></td>
+										</tr>
+										<tr class="index_cp_view">
+											<td width="150px" align="center"><a href="cpreview.html"><img src="img/gragas_1.jpg"></a></td>
+											<td align="left"><a href="cpreview.html">그라가스에 대한 평가입니다.</a></td>
+										</tr>	
+										<tr class="index_cp_view">
+											<td width="150px" align="center"><a href="cpreview.html"><img src="img/darius_1.jpg"></a></td>
+											<td align="left"><a href="cpreview.html">다리우스에 대한 평가입니다.</a></td>
+										</tr>									
+									</table>	
+								</td>
+							</tr>
+						</table>
+					</div>	
+					<!-- 컨텐츠 출력 되는곳 -------------------------- -->
+				</td>
+			</tr>
+		</table>		
+	</body>
+</html>

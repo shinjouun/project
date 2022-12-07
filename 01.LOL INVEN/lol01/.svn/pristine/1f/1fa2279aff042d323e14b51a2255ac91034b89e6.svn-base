@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<script>
+	window.onload = function()
+	{
+		alert("사용가능한 아이디입니다. or 중복된 아이디입니다.");
+		
+		window.close();
+	}
+</script>

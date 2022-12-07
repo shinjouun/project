@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import="lol.dbms.*" %>
+<%@ include file="../js/jquery-3.6.0.js" %>
+<%
+request.setCharacterEncoding("euc-kr");
+
+String id = request.getParameter("userid");
+String pw = request.getParameter("userpw");
+
+System.out.println("id");
+System.out.println("pw");
+
+
+%>

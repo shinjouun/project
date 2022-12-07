@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>League of Legend Inven</title>
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="jquery-3.6.0.js"></script>
+	</head>
+	<body>
+	<script>
+		function DoModify()
+		{
+			window.open("uinfomodify.html", "_uinfomodify",
+			"width=538,height=360,left=700,top=400");	
+		}	
+		function DoQuit()
+		{
+			window.open("uquitcheck.html", "_uquitcheck",
+			"width=500,height=200,left=800,top=500");	
+		}
+	</script>
+			<table  width="900px" align="center" style="border-collapse :collapse;" >
+			<tr>
+				<td align="center">
+					<a href="index.html">
+					<div style="display:block;">
+					<img src="img/lol1.png" width="800" height="200" align="middle" style="">
+					</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		<table  border="0" width="1200px" align="center" style="border-collapse :collapse;">
+			<tr>
+				<td colspan="3" style="text-align:right;">
+				<div class="topmenu" style="height:32px;padding-top:10px;">
+					<a href="join.html">회원가입</a>
+					<a href="login.html">로그인</a>
+					<a href="javascript:DoModify();">회원정보수정</a>
+					<a href="javascript:DoQuit();">회원탈퇴</a>	
+					&nbsp;&nbsp;
+				</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="leftmenu" style="width:200px;" valign="top">
+						<a href="index.html">홈</a>
+						<br>
+						<a href="cplist.html">챔피언 목록</a>
+						<br>
+						<a href="cpreview.html">챔피언 평가</a>		
+						<br>
+				</td>
+				<td valign="top">
+					<!-- 컨텐츠 출력 되는곳 -------------------------- -->
+					<table class="inner" border="0" style="width:100%;">
+						<tr>
+							<td>챔피언 정보입니다.</td>
+							<td align="right"><a href="javascript:DoCpModify();">챔피언정보 수정</a></td>
+						</tr>
+					</table>
+					<div class="cpinfomenu">
+						<table border="0" style="width:100%;">
+							<tr>
+								<td align="center"><a href="cpinfo.html">챔피언 정보</a></td>
+								<td align="center"><a href="cpstory.html">챔피언 스토리</a></td>
+								<td align="center"><a href="cplist.html">챔피언 목록</a></td>
+							</tr>
+						</table>
+					</div>
+				<div class="cpbackground" style="width:1000px; height:400px; margin-left:-1px;" >
+					<table border="0" style="width:100%; height:400px;">
+						<tr>
+							<td><textarea style="width:50%; height:50%;font-size:14px; line-height:25px; resize:none; padding-left:120px; padding-bottom:80px;" readonly>가렌은 불굴의 선봉대를 이끄는 고결하고 자긍심 강한 군인이다. 선봉대 내에서 인망이 두터울 뿐 아니라 심지어 적에게도 존경을 받지만, 그가 대대로 데마시아와 그 이상을 수호하는 임무를 맡은 크라운가드 가문의 자손이기 때문은 아니다. 가렌은 자신의 부모님이 마법사에 살해되어 마법을 매우 혐오하며 마법 저항력을 갖춘 방어구와 거대한 대검으로 무장하고, 언제라도 마법사에 맞서 정의의 칼바람을 일으킬 준비가 되어 있다.
+</textarea></td>
+						</tr>
+					</table>
+				</div>
+				<table class="inner" border="0" style="width:100%;">
+					<tr>
+						<td width="50px" align="center">챔피언</td>
+						<td width="449px" align="center">챔피언 평가</td>
+						<td width="118px" align="center">작성자</td>
+					</tr>
+					<table border="0" style="width:100%; margin:5px;">					
+						<tr>
+							<td width="45px" align="center"><img src="img/garen_1.jpg" width="100%"></td>
+							<td width="691px" align="left" style="padding-left:20px;">가렌에 대한 평가 입니다.</td>
+							<td width="200px" align="center" colspan="2">작성자<br>&nbsp;&nbsp;&nbsp;2022.10.15 &nbsp;&nbsp;&nbsp;<br>
+							[<a href="javascript:DoReviewModify();">수정</a>] | [<a href="javascript:DoReviewDelete();">삭제</a>]</td>
+						</tr>
+						<tr>
+							<td width="45px" align="center"><img src="img/garen_1.jpg" width="100%"></td>
+							<td width="691px" align="left" style="padding-left:20px;">가렌에 대한 평가 입니다.</td>
+							<td width="200px" align="center" colspan="2">작성자<br>&nbsp;&nbsp;&nbsp;2022.10.15 &nbsp;&nbsp;&nbsp;<br>
+							[<a href="javascript:DoReviewModify();">수정</a>] | [<a href="javascript:DoReviewDelete();">삭제</a>]</td>
+						</tr>
+						<tr>
+							<td width="45px" align="center"><img src="img/garen_1.jpg" width="100%"></td>
+							<td width="691px" align="left" style="padding-left:20px;">가렌에 대한 평가 입니다.</td>
+							<td width="200px" align="center" colspan="2">작성자<br>&nbsp;&nbsp;&nbsp;2022.10.15 &nbsp;&nbsp;&nbsp;<br>
+							[<a href="javascript:DoReviewModify();">수정</a>] | [<a href="javascript:DoReviewDelete();">삭제</a>]</td>
+						</tr>
+						<tr>
+							<td width="80px">작성자 id</td>
+							<td colspan="3"><input type="text" style="width:85%">&nbsp;&nbsp;&nbsp;
+							<a style="color:#ffffff; background-color: #060A41; border-radius:3px 3px 3px 3px; padding: 5px 5px;" href="#">등록</a></td>
+						</tr>											
+						<tr>
+							<td align="center" colspan="3">◀ 1 2 3 4 5 6 7 8 9  ▶</td>
+						</tr>								
+					</table>
+					<!-- 컨텐츠 출력 되는곳 -------------------------- -->
+		</table>		
+	</body>
+</html>

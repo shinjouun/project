@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="../include/mainhead.jsp" %>
+
+<script>//해드에 놓으면 인클루드 되어서 각 문서에 이문서 추가되어있는거랑 마찬가지임!
+function DoReviewModify() //챔피언평가 수정 
+{
+	window.open("../user/reviewmodify.jsp", "_reviewmodify",
+	"width=500,height=400");
+}
+function DoCpModify()  //챔피언정보수정
+{
+	window.open("../admin/cpmodify.jsp", "_cpmodify",
+	"width=600,height=550");
+}
+function DoReviewDelete() //챔피언평가삭제
+{
+	if(confirm("정말 삭제 하시겠습니까?") == true)
+	{
+		alert("삭제되었습니다.");
+	}
+}
+</script>
+<table class="inner" border="0" style="width:100%;">
+	<tr>
+		<td>챔피언정보 입니다.</td>
+		<%
+		if( loginVO != null && loginVO.getUadmin().equals("A"))//관리자 코드가 무엇인지.
+		{
+			// 참일때참 !
+			%>
+			<td align="right"><a href="javascript:DoCpModify();">챔피언정보 수정</a></td>
+			<%
+		}
+		%>
+	</tr>
+</table>
+<div class="cpinfomenu">
+	<table border="0" style="width:100%;">
+		<tr>
+			<td align="center"><a href="../champion/cpinfo.jsp">챔피언 정보</a></td>
+			<td align="center"><a href="../champion/cpstory.jsp">챔피언 스토리</a></td>
+			<td align="center"><a href="../champion/cplist.jsp">챔피언 목록</a></td>
+		</tr>
+	</table>
+</div>

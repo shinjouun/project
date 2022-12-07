@@ -1,0 +1,120 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="../include/mainhead.jsp" %>
+<script>
+function DoCpAdd()
+{
+	window.open("../admin/cpadd.jsp", "_cpadd",
+	"width=600,height=550");	
+}
+
+
+function DoCpDelete()
+{
+	if(confirm("삭제하시겠습니까?") == 1)
+	{
+		window.open("../admin/cpdelete.jsp", "_cpdelete",
+		"width=600,height=550");	
+	}
+}
+
+//마우스 over시 발동되는 메소드
+function DoDetail(obj)
+{
+	//메소드가 실행되면 div가 보여지게함
+	$("#cpdetail").css("display","");
+	
+	//마우스가 움직일때 따라다니는 코드
+	$(document).mousemove(
+		function(e) {
+	      mouseX = e.pageX;
+	      mouseY = e.pageY;
+	      $('#cpdetail').css("left", mouseX+15).css("top", mouseY+15);
+	 });
+	
+	//마우스가 떠나면 보이지 않게함.
+	$(this).mouseleave(
+		function()
+		{
+			$("#cpdetail").css("display","none");
+		}		
+	);
+}
+</script>
+<!-- 컨텐츠 출력 되는곳 -------------------------- -->
+<table  class="inner" border="0" style="width:100%;">
+	<tr>
+		<td>챔피언 목록입니다.</td>
+		<%
+		if(loginVO != null && loginVO.getUadmin().equals("A"))
+		{
+			%>
+			<td align="center"><a href="javascript:DoCpAdd();">챔피언 추가</a></td>
+			<td align="center"><a href="#" onclick="DoCpDelete();">챔피언 삭제</a></td>
+			<%		
+		}
+		%>
+	</tr>
+</table>
+<div class= "inner_a">
+	<table border="0" style="width:100%;">
+		<tr>
+			<td><a>역할필터</a></td>
+		</tr>
+		<tr>
+			<td align="center">
+			<form id="position" name="position" method="post">
+			<input type="checkbox">&nbsp;&nbsp;전사&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox">&nbsp;&nbsp;마법사&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox">&nbsp;&nbsp;원거리
+			</td>
+		</tr>
+		<tr>
+			<td  class="search" align="right">
+			<input type="text" size="10">
+			<a href="#">검색</a>
+			</from>
+			</td>
+		</tr>	
+	</table>
+</div>
+<div class="divnull">
+	<br>
+</div>
+	<form>
+		<table class="list_image" border="0" style="width:100%; height:500px">
+		<tr>
+			<td align="center"><input type="checkbox" id="check_cpno"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/garen_1.jpg"></a><br><a href="cpinfo.jsp">가렌</a></td>
+			<td align="center"><input type="checkbox"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/gragas_1.jpg"></a><br><a href="cpinfo.jsp">그라가스</a></td>
+			<td align="center"><input type="checkbox"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/darius_1.jpg"></a><br><a href="cpinfo.jsp">다리우스</a></td>
+			<td align="center"><input type="checkbox"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/lux_1.jpg"></a><br><a href="cpinfo.jsp">럭스</a></td>
+			<td align="center"><input type="checkbox"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/lulu_1.jpg"></a><br><a href="cpinfo.jsp">룰루</a></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="checkbox"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/missFortune_1.jpg"></a><br><a href="cpinfo.jsp">미스포츈</a></td>
+			<td align="center"><input type="checkbox"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/vayne_1.jpg"></a><br><a href="cpinfo.jsp">베인</a></td>
+			<td align="center"><input type="checkbox"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/sivir_1.jpg"></a><br><a href="cpinfo.jsp">시비르</a></td>
+			<td align="center"><input type="checkbox"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/jayce_1.jpg"></a><br><a href="cpinfo.jsp">제이스</a></td>
+			<td align="center"><input type="checkbox"><br><a href="cpinfo.jsp" onmouseenter="DoDetail(this);" id="cpimg"><img src="../img/kennen_1.jpg"></a><br><a href="cpinfo.jsp">케넨</a></td>
+		</tr>
+	</table>
+</form>
+<div id="cpdetail" style="display:none;">
+<table border="0" style="background-color:black;">
+ 	<tr>
+ 		<td rowspan="3" style="width:30px;"><img src="../img/garen_1.jpg"></td>
+ 		<td style="color:#F6700E;">가렌, 데마시아의 힘</td>
+ 	</tr>
+ 	<tr>
+ 		<td style="color:#8eb3b8;">Garen, The Might of Demacia</td>
+ 	</tr>
+ 	<tr>
+ 		<td style="color:#7cacbd;">전사, 탱커 (탑)</td>
+ 	</tr>
+ 	<tr>
+ 		<td colspan="2" style="color:#a0acbd;">가렌은 고유의 회복 효과로 전투를 오래 지속할 수 있는 챔피언입니다. <br>회복 능력은 레벨이 오를수록 강화되어 빠른 속도로 체력을 회복하게 됩니다. <br>궁극기로는 적에게 고정 피해를 입힐 수 있어 방어력을 무시하고 공격할 수 있습니다.</td>
+ 	</tr>
+</table>
+</div>
+<!-- 컨텐츠 출력 되는곳 -------------------------- -->
+<%@ include file="../include/maintail.jsp" %>

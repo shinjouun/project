@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>League of Legend Inven</title>
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="jquery-3.6.0.js"></script>
+	</head>
+	<body>
+	<script>
+		function DoModify()
+		{
+			window.open("uinfomodify.html", "_uinfomodify",
+			"width=538,height=360,left=700,top=400");	
+		}
+		function DoQuit()
+		{
+			window.open("uquitcheck.html", "_uquitcheck",
+			"width=500,height=200,left=800,top=500");	
+		}
+		function DoReviewModify()
+		{
+			window.open("reviewmodify.html", "_reviewmodify",
+			"width=500,height=400");
+		}
+		function DoCpModify()
+		{
+			window.open("cpmodify.html", "_cpmodify",
+			"width=600,height=550");
+		}
+		function DoReviewDelete()
+		{
+			if(confirm("정말 삭제 하시겠습니까?") == true)
+			{
+				alert("삭제되었습니다.");
+			}
+		}
+	</script>
+		<table  width="900px" align="center" style="border-collapse :collapse;" >
+			<tr>
+				<td align="center">
+					<a href="index.html">
+					<div style="display:block;">
+					<img src="img/lol1.png" width="800" height="200" align="middle" style="">
+					</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		<table  border="0" width="1200px" align="center" style="border-collapse :collapse;">
+			<tr>
+				<td colspan="3" style="text-align:right;">
+				<div class="topmenu" style="height:32px;padding-top:10px;">
+					<a href="join.html">회원가입</a>
+					<a href="login.html">로그인</a>
+					<a href="javascript:DoModify();">회원정보수정</a>
+					<a href="javascript:DoQuit();">회원탈퇴</a>	
+					&nbsp;&nbsp;
+				</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="leftmenu" style="width:200px;" valign="top">
+						<a href="index.html">홈</a>
+						<br>
+						<a href="cplist.html">챔피언 목록</a>
+						<br>
+						<a href="cpreview.html">챔피언 평가</a>		
+						<br>
+				</td>
+				<td valign="top">
+					<!-- 컨텐츠 출력 되는곳 -------------------------- -->
+					<table class="inner" border="0" style="width:100%;">
+						<tr>
+							<td>챔피언정보입니다.</td>
+							<td align="right"><a href="javascript:DoCpModify();">챔피언정보 수정</a></td>
+						</tr>
+					</table>
+					<div class="cpinfomenu">
+						<table border="0" style="width:100%;">
+							<tr>
+								<td align="center"><a href="cpinfo.html">챔피언 정보</a></td>
+								<td align="center"><a href="cpstory.html">챔피언 스토리</a></td>
+								<td align="center"><a href="cplist.html">챔피언 목록</a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="cpbackground" style="width:1000px; height:400px; margin-left:-1px;">
+						<table border="0" style="width:100%;">
+							<tr>
+								<td style="width:50px;"></td>
+								<td rowspan="3" align="center" style="width:150px;"><img src="img/garen_1.jpg" width="80%"></td>
+								<td style="width:50px;"></td>
+								<td style="color:#F6700E;">가렌, 데마시아의 힘</td>
+							</tr>
+							<tr>
+								<td style="width:50px;"></td>
+								<td style="width:50px;"></td>
+								<td style="color:#8eb3b8;">Garen, The Might of Demacia</td>
+							</tr>
+						</table>
+						<table border="0" style="width:100%; ">
+							<tr>
+								<td><b><textarea style="width:425px; height:100px; resize:none; padding-left:80px; padding-top:20px;" readonly>가렌은 고유의 회복 효과로 전투를 오래 지속할 수 있는 챔피언입니다.
+ 회복 능력은 레벨이 오를수록 강화되어 빠른 속도로 체력을 회복하게 됩니다. 궁극기로는 적에게 고정 피해를 입힐 수 있어 방어력을 무시하고 공격할 수 있습니다.</textarea></b>
+								</td>
+							</tr>
+							<tr>
+								<td style="color:#F67004; padding-left:80px;" >포지션 : 전사</td>
+							</tr>
+						</table>
+					</div>
+					<table class="inner" border="0" style="width:100%;">
+						<tr>
+							<td width="50px" align="center">챔피언</td>
+							<td width="449px" align="center">챔피언 평가</td>
+							<td width="118px" align="center">작성자</td>
+						</tr>
+						<table border="0" style="width:100%; margin:5px;">					
+							<tr>
+								<td width="45px" align="center"><img src="img/garen_1.jpg" width="100%"></td>
+								<td width="691px" align="left" style="padding-left:20px;">가렌에 대한 평가 입니다.</td>
+								<td width="200px" align="center" colspan="2">작성자<br>&nbsp;&nbsp;&nbsp;2022.10.15 &nbsp;&nbsp;&nbsp;<br>
+								[<a href="javascript:DoReviewModify();">수정</a>] | [<a href="javascript:DoReviewDelete();">삭제</a>]</td>
+							</tr>
+							<tr>
+								<td width="45px" align="center"><img src="img/garen_1.jpg" width="100%"></td>
+								<td width="691px" align="left" style="padding-left:20px;">가렌에 대한 평가 입니다.</td>
+								<td width="200px" align="center" colspan="2">작성자<br>&nbsp;&nbsp;&nbsp;2022.10.15 &nbsp;&nbsp;&nbsp;<br>
+								[<a href="javascript:DoReviewModify();">수정</a>] | [<a href="javascript:DoReviewDelete();">삭제</a>]</td>
+							</tr>
+							<tr>
+								<td width="45px" align="center"><img src="img/garen_1.jpg" width="100%"></td>
+								<td width="691px" align="left" style="padding-left:20px;">가렌에 대한 평가 입니다.</td>
+								<td width="200px" align="center" colspan="2">작성자<br>&nbsp;&nbsp;&nbsp;2022.10.15 &nbsp;&nbsp;&nbsp;<br>
+								[<a href="javascript:DoReviewModify();">수정</a>] | [<a href="javascript:DoReviewDelete();">삭제</a>]</td>
+							</tr>
+							<tr>
+								<td width="80px">작성자 id</td>
+								<td colspan="3"><input type="text" id="cpreivew" name="cpreview" style="width:85%">&nbsp;&nbsp;&nbsp;
+								<a style="color:#ffffff; background-color: #060A41; border-radius:3px 3px 3px 3px; padding: 5px 5px;" href="#">등록</a></td>
+							</tr>											
+							<tr>
+								<td align="center" colspan="3">◀ 1 2 3 4 5 6 7 8 9  ▶</td>
+							</tr>								
+						</table>
+					</table>
+					<!-- 컨텐츠 출력 되는곳 -------------------------- -->
+		</table>		
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>챔피언 삭제</title>
+		<link rel="stylesheet" href="css/popupstyle.css"/>
+	</head>
+	<body>
+	<script>
+		window.onload = function()
+		{
+			alert("삭제 되었습니다");
+			window.close();
+		}
+	</script>
+	</body>
+</html>
