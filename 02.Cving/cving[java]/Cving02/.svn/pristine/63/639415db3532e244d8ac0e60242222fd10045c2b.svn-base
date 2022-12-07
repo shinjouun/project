@@ -1,0 +1,80 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="./config/config.jsp"%>
+<%
+request.setCharacterEncoding("euc-kr");
+
+String title = request.getParameter("title");
+
+%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>search</title>
+		<link rel="stylesheet" href="css/cving.css">
+	</head>
+	<body>
+		<div class="container">
+			<header id = "header">
+				<div class="logo">
+					<a href="./index.jsp">
+					<img src="./img/blackcving.png" style="width:100%; height:100%;">
+					</a>
+				</div>
+				<div class="logout">
+					<a href="./login.jsp">로그아웃</a>
+				</div>				
+				<div class="search">
+					<input type="text">
+					<a href="./search.jsp?title=<%=title%>">검색</a>
+				</div>	
+			</header>
+			<section class="search_movie">
+				<h1> 검색된 영화</h1>
+			</section>
+			<div id="wrap">
+			<div class="m_imgin" style="padding:50px 0px 100px 0px;">
+			<%
+			DBManager db = new DBManager();
+			db.DBOpen();
+			String sql = "";
+			sql  = "select mimg, mcode  from movie ";
+			sql += "where used = 'Y' and mtitle like '%"+title+"%' ";
+			int count = 1;
+			db.OpenQuery(sql);
+			while(db.GetNext()) //여러줄을 가져와야해서 while반복문을 써서 계속 가져오게 하는것 
+			{
+				String mimg = db.GetValue("mimg");
+				String mcode = db.GetValue("mcode");
+				%>
+				<a href="./info.jsp?code=<%= mcode %>"><img src="<%= mimg %>"></a>
+				<%
+				if(count % 4 == 0)
+				{
+					%>
+					</div>
+					<div class="m_imgin" style="padding:50px 0px 100px 0px;">
+					<%
+				}
+				count++;
+				
+			}
+			db.CloseQuery();
+			%>
+			</div>
+				<footer>
+				<article class="foot_menu">
+				 	<hr style="background-color:white;">
+					명칭: 주식회사 이젠 | 등록번호: 전북 소4048 | 등록연월일: 2022. 10. 14 | 제호: CVING<br>
+					발행: C team  | 발행소: 전라북도 전주시 덕진구 금암동 이젠컴퓨터학원 4층 407호<br>
+					CVING의 콘텐츠는 저작권법의 보호를 받으므로, 무단 전재, 복사, 배포 등을 금합니다.<br>
+				</article>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
+<% 
+db.DBClose();
+%>

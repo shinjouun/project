@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+<%@ include file="./config/config.jsp"%>
+<%
+String id = request.getParameter("id"); //매개변수 요청 !!
+String pw = request.getParameter("pw");
+
+DBManager db = new DBManager();
+db.DBOpen();
+
+String sql="";
+sql  = "select uno, uid, uname,ubirth, ugender from user ";
+sql += "where uid = '" + id + "' and upw = md5('" + pw + "') ";
+db.OpenQuery(sql); //실행시켜라
+
+if(db.GetNext() == true)	
+{
+	//로그인이 됐을 때
+	String uno = db.GetValue("uno");
+	UserVO vo = new UserVO();
+	Calage cal = new Calage();
+	vo.setUno(uno);
+	vo.setUage(cal.age(db.GetValue("ubirth")));
+	vo.setUgender(db.GetValue("ugender"));
+	vo.setUname(db.GetValue("uname"));
+	session.setAttribute("login",vo);
+	
+	sql  = "select * from hobby "; //선호장르가 등록되어있는지 
+	sql += "where uno = " + uno; //로그인한 유저의 번호가 있는지 본다.
+	db.OpenQuery(sql); //sql 구문을 실행 시켜준다.
+	if(db.GetNext() == true)  //다음 열이 있으면 ~(검색된 값이 있으면 )
+	{
+		//두번째이상 로그인했을때
+		response.sendRedirect("index.jsp"); //요청 페이지로 가달라고 요청하는것 !
+	}
+	else
+	{ 	
+		//처음 로그인했을때
+		response.sendRedirect("hobby.jsp");
+		
+	}
+	db.CloseQuery();
+}
+else
+{
+	%>
+	<script>
+		alert("아이디 비밀번호가 일치하지 않습니다");
+		document.location = "login.jsp";
+	</script>
+	<%
+}
+	
+db.CloseQuery();
+db.DBClose();
+
+%>

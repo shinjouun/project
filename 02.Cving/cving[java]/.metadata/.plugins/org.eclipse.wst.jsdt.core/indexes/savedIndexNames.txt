@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\project\project2\Cving\cving[java]\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+701688480.index
+2800292171.index
+1242805971.index
+819905816.index
+1139328696.index
+3672217346.index
+759250930.index

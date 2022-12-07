@@ -1,0 +1,239 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="./config/config.jsp"%>
+<%
+UserVO LoginVO = (UserVO)session.getAttribute("login");
+if(LoginVO == null)
+{
+	//로그인을 하지 않으면 login페이지로 넘겨준다.
+	response.sendRedirect("login.jsp");
+	return;
+}
+DBManager db = new DBManager();
+db.DBOpen();
+
+
+System.out.println(LoginVO.getUgender());
+String sql = "";
+sql = "select hobby from hobby where uno = " + LoginVO.getUno(); //hobby 테이블에 로그인한 유저 vo의 번호와 uno가 맞으면 hobby컬럼을 가지고 온다.
+db.OpenQuery(sql);
+String hobby = "";
+while(db.GetNext())
+{
+	if(!hobby.equals("")) hobby += ","; 
+	hobby += db.GetValue("hobby");
+}
+System.out.println(hobby);
+String realhobby[] = hobby.split(","); //쉼표를 기준으로 문자열을 나눠서 배열을 만들어준다.
+db.CloseQuery();
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>CVING</title>
+<link rel="stylesheet"href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="css/cving.css">
+<script src="./jquery-3.6.0.js"></script>
+</head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script>
+		$(document).ready(function(){
+			$('.slider').bxSlider({
+		        mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+		        pager: false, // 페이지 표시 보여짐
+		        minSlides : 5,
+		        maxSlides : 5,
+		        slideMargin : 1,
+		        slideWidth : 1200,
+		        moveSlides : 1,
+		        infiniteLoop : true,
+		        hideControlOnEnd: true,
+		        caption: true,
+		        touchEnabled : (navigator.maxTouchPoints > 0),
+			});
+			
+			$("#btn_search").click(function(){
+				document.location = "search.jsp?title=" + $("#search").val();
+			});
+	
+		});
+	</script>
+
+<body>
+	<div class="container">
+		<header id="header">
+			<div class="logo">
+				<a href="#"> <img src="./img/logoback.png"
+					style="width: 100%; height: 100%;">
+				</a>
+			</div>
+			<div class="logout">
+				<a href="./login.jsp">로그아웃</a>
+			</div>
+			<div class="search">
+				<input type="text" id="search" name="search"><a href="#" id="btn_search" >검색</a>
+			</div>
+		</header>
+		<div class="top">
+			<article class="movie_1">
+				장르별 추천 영화
+				<ul class="slider">
+					<%
+					sql = "select mcode, mhobby, mscore, mimg from ( ";
+					sql += "select mcode, mhobby, mscore, mimg from movie ";
+					sql += "where 1=1 "; //무조건 참 
+					sql += "and mscore < 9.50 "; //평점9.50보다 작은거
+					sql += "and mscore > 8.30 ";
+					sql += "and used = 'Y' "; //영화가 정상적인 영화인지 ..
+					String sub_sql = "";
+					for(int i = 0 ; i < realhobby.length ; i++)
+					{
+						if( !sub_sql.equals("") )//sub_sql 이 비워 있지 않으면 
+							sub_sql += " or ";  //or을 찍어 주겠다 !
+								
+						sub_sql += " mhobby in (select mhobby from genre where mhobby like '%"+ realhobby[i] +"%') ";						
+					}
+					if( !sub_sql.equals("") )
+					{
+						sql += " and ( " + sub_sql + ") ";
+					}
+					sql += "order by rand() limit 0, 100 ) x ";
+					sql += "limit 0, 20 ";//점수기준 평점 내림차순으로 
+					db.OpenQuery(sql);
+					while(db.GetNext())
+					{
+						String mcode = db.GetValue("mcode");
+						String mhobby = db.GetValue("mhobby");
+						String mscore = db.GetValue("mscore");
+						String mimg = db.GetValue("mimg");
+						if(mimg.equals("없음"))
+						{
+							%>
+							<li><a href="./info.jsp?code=<%= mcode %>"><img src="./img/img_null.png"></a></li>
+							<%
+						}
+						else
+						{
+							%>
+							<li><a href="./info.jsp?code=<%= mcode %>"><img src=<%= mimg %>></a></li>
+							<%
+						}
+					}
+					db.CloseQuery();
+					%>
+				</ul>
+			</article>
+			<article class="movie_2">
+				<%
+				sub_sql = "";
+				if(LoginVO != null && LoginVO.getUgender().equals("M")) 
+				{
+					//성별이 남자일때..
+					%>
+					남자들이 선호하는 영화
+					<%
+					sub_sql = "and male > female "; //그리고 영화 남자 선호도 여자선호도 중 누가 더 큰지.
+					sub_sql += "order by rand() limit 0, 100 ";
+					
+					
+				}else
+				{
+					%>
+					여자들이 선호하는 영화
+					<%
+					sub_sql = "and male < female "; //그리고 영화 남자 선호도 여자선호도 중 누가 더 큰지.
+					sub_sql += "order by rand() limit 0, 100 ";
+				}
+				sql = "select mcode, male, female, mscore, mimg from ( ";
+				sql += "select mcode, male, female, mscore, mimg from movie ";
+				sql += "where 1=1 "; //참이면
+				sql += "and mscore < 9.50 ";
+				sql += "and mscore > 8.30 ";
+				sql += "and used = 'Y' ";
+				sql += sub_sql;
+				sql += ") x ";
+				sql += "limit 0, 20";
+				db.OpenQuery(sql);
+				%>
+				<ul class="slider">
+				<% 
+				while(db.GetNext())
+				{
+					String mcode  = db.GetValue("mcode");
+					String male   = db.GetValue("male");
+					String female = db.GetValue("female");
+					String mscore = db.GetValue("mscore");
+					String mimg   = db.GetValue("mimg");
+					if(mimg.equals("없음"))
+					{
+						%>
+						<li><a href="./info.jsp?code=<%= mcode %>"><img src="./img/img_null.png"></a></li>
+						<%
+					}
+					else
+					{
+						%>
+						<li><a href="./info.jsp?code=<%= mcode %>"><img src=<%=mimg%>></a></li>
+						<%
+					}
+				}
+				db.CloseQuery();
+				%>
+				</ul>				
+			</article>
+			<article class="movie_3">
+				인기 영화
+				<ul class="slider">
+				<%
+					sql = "";
+					sql += "select mcode, mhobby, mscore, mimg from ( ";
+					sql += "select mcode, mhobby, mscore, mimg from movie ";
+					sql += "where 1=1 "; //무조건 참 
+					sql += "and mscore < 9.50 "; //평점9.50보다 작은거
+					sql += "and mscore > 8.30 ";
+					sql += "and used = 'Y' ";
+					sql += "order by rand() limit 0, 100 ) x limit 0, 20 "; //점수기준 평점 내림차순으로 
+					db.OpenQuery(sql);
+					while(db.GetNext())
+					{
+						String mcode = db.GetValue("mcode");
+						String mhobby = db.GetValue("mhobby");
+						String mscore = db.GetValue("mscore");
+						String mimg = db.GetValue("mimg");
+						if(mimg.equals("없음"))
+						{
+							%>
+							<li><a href="./info.jsp?code=<%= mcode %>"><img src="./img/img_null.png"></a></li>
+							<%
+						}
+						else
+						{
+							%>
+							<li><a href="./info.jsp?code=<%= mcode %>"><img src=<%=mimg%>></a></li>
+							<%
+						}
+					}
+					db.CloseQuery();
+				%>
+				</ul>
+			</article>
+		</div>
+		<footer>
+			<article class="foot_menu">
+				<hr style="background-color: white;">
+				명칭: 주식회사 이젠 | 등록번호: 전북 소4048 | 등록연월일: 2022. 10. 14 | 제호: CVING<br>
+				발행: C team | 발행소: 전라북도 전주시 덕진구 금암동 이젠컴퓨터학원 4층 407호<br> CVING의
+				콘텐츠는 저작권법의 보호를 받으므로, 무단 전재, 복사, 배포 등을 금합니다.<br>
+			</article>
+		</footer>
+	</div>
+</body>
+</html>
+<%
+db.DBClose();
+%>

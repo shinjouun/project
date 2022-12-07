@@ -1,0 +1,167 @@
+ <%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>join</title>
+		<script src="./jquery-3.6.0.js"></script>
+		<link rel="stylesheet" href="css/cving.css">
+	</head>
+	<script>
+	var isCheckID = false;
+	var isCheckPW = false;
+	window.onload = function()
+	{
+		$("#user_ID").focus();
+		// 아이디 중복체크 버튼
+		$("#btn_IDcheck").click(function(){//  실시간하는것!
+			$.ajax({
+				type : "get",
+				url: "./idcheck.jsp?id=" + $("#user_ID").val(),
+				dataType: "html",
+				success : function(data)
+				{	
+					// 통신이 성공적으로 이루어졌을때 이 함수를 타게된다.	
+					data = data.trim();
+					if(data == "SUCESS")
+					{
+						isCheckID = true;
+						alert("사용할 수 있는 아이디입니다");
+					}
+					else
+					{
+						isCheckID = false;
+						alert("중복된 아이디입니다.");
+					}
+				},
+				error : function(xhr, status, error) 
+				{
+					// 통신 오류 발생시
+				}
+			});
+			
+		});
+		//비밀번호 확인 버튼
+		$("#btn_PWcheck").click(function(){
+			if($("#user_PW1").val() == $("#user_PW2").val())
+			{
+				isCheckPW = true; 
+				alert("비밀번호가 일치합니다.");
+			}
+			else
+			{
+				alert("비밀번호가 일치하지 않습니다.");
+			}
+		});
+		//회원가입 버튼
+		$("#btn_join").click(function(){
+			DoCheckJoin();
+		});
+	}
+	function DoCheckJoin()
+	{
+		if($("#user_ID").val() == "")
+		{
+			alert("아이디를 입력하세요");	
+			$("#user_ID").focus();
+			return;
+		}			
+		if($("#user_PW1").val() == "")
+		{
+			alert("비밀번호 입력하세요");	
+			$("#user_PW1").focus();
+			return;
+		}			
+		if($("#user_PW2").val() == "")
+		{
+			alert("비밀번호 입력하세요");	
+			$("#user_PW2").focus();
+			return;
+		}			
+		if($("#user_name").val() == "")
+		{
+			alert("이름을 입력하세요");	
+			$("#user_name").focus();
+			return;
+		}			
+		if($("#birth").val() == "")
+		{
+			alert("생년월일을 입력하세요");	
+			$("#birth").focus();
+			return;
+		}
+		if(isCheckID == false)
+		{
+			alert("아이디 중복검사를 해주세요!");
+			return;
+		}
+		if(isCheckPW == false)
+		{
+			alert("비밀번호 중복검사를 해주세요!");
+			return;
+		}
+		if(!$('input[name=gender]').is(":checked"))
+		{
+			alert("성별을 선택해주세요!");
+			return;
+		}
+		if(confirm("회원가입을 하시겠습니까?") == 1)
+		{
+			if(isCheckID == true && isCheckPW == true )
+			{
+				$("#join").submit();
+			}
+		}
+	}
+	</script>
+	<body>
+		<div class="container">
+			<a href="./login.jsp"><img src="./img/logoback.png" style=" position:absolute;  width:150px; height:80px; top:30px; left:50px; "></a>
+			<section class="join_title">
+				<h1>회원가입</h1>
+			</section>
+			<section class="join_section">
+				<form name="join" method="post" id="join" action="joinok.jsp">
+					<div class="join_list">
+						<input type="text" class="join_textbox1" id="user_ID" name="user_ID" placeholder="아이디 입력">
+						<input type="button" class="btn_joinbox" id="btn_IDcheck" name="btn_IDcheck" value="아이디 확인">
+						<br><br>
+						<input type="password" class="join_textbox2" id="user_PW1" name="user_PW1"
+							 placeholder="비밀번호 입력">
+						<br><br>
+						<input type="password" class="join_textbox1" id="user_PW2" name="user_PW2"
+						 	placeholder="비밀번호 재입력">
+						<input type="button" class="btn_joinbox" id="btn_PWcheck" name="btn_PWcheck" value="비밀번호 확인">
+						<br><br>
+						<input type="text" class="join_textbox2" id="user_name" name="user_name" placeholder="이름">
+						<br><br>
+						<input type="text" class="join_textbox2" id="birth" name="birth"placeholder="생년월일 (YYYYMMDD)" 
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+						<br><br>
+						<!-- 라디오 박스 div 묶어놓음 -->
+						<div class="join_radio">
+							<input type="radio" name="gender" value="M" id="gender">
+							<label for="man">남자</label>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="radio" name="gender" value="W" id="gender">
+							<label for="woman">여자</label>
+						</div>
+						<br><br>
+					</div>
+					<div class="btn_join">
+						<input type="button" id="btn_join" name="btn_join" value="회원가입">
+					</div>
+				</form>
+			</section>
+		<footer>
+			<article class="foot_menu">
+				<hr style="background-color:white;">
+				명칭: 주식회사 이젠 | 등록번호: 전북 소4048 | 등록연월일: 2022. 10. 14 | 제호: CVING<br>
+				발행: C team  | 발행소: 전라북도 전주시 덕진구 금암동 이젠컴퓨터학원 4층 407호<br>
+				CVING의 콘텐츠는 저작권법의 보호를 받으므로, 무단 전재, 복사, 배포 등을 금합니다.<br>
+			</article>
+		</footer>
+		</div>
+	</body>
+</html>

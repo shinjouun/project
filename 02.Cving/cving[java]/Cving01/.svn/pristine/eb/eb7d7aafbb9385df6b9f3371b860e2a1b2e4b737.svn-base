@@ -1,0 +1,332 @@
+@charset "EUC-KR";
+body 
+{
+	margin : 0;
+	padding: 0;
+	background-color:black;
+	color: white;
+}
+.container
+{
+	border: 1px solid red;
+	width: 1200px;
+	margin: auto;
+}
+header
+{
+	border : 1px solid black;
+	height : 100px;
+	display: flex;
+	justify-content: space-between;
+}
+.logo
+{
+	border: 1px solid gold;
+	width: 200px;
+	height: 100px;
+}
+.top
+{
+	border: 1px solid gold;
+	width: 1200px;
+	height: 900px;
+}
+.movie_1
+{
+	border: 1px solid green;
+	height:300px;
+}
+.movie_2
+{
+	border: 1px solid green;
+	height:300px;
+}
+.movie_3
+{
+	border: 1px solid green;
+	height:300px;
+}
+
+/* 하단부분*/
+footer
+{
+	border: 1px solid orange;
+	height: 200px;
+}
+.foot_menu
+{
+	border: 1px solid violet;
+	padding-top:50px;
+	width:1200px;
+	height:150px;
+	float:right;
+	text-align:center;
+	line-height:25px;
+}
+.logout
+{
+	padding-top:35px; 
+	margin-left:500px;
+}
+.logout > a
+{
+	color:red; 
+	font-size:15px;  
+	font-weight:bold ;
+}
+.search
+{
+	padding-top:35px; 
+	margin-right:20px;
+}
+.search > a
+{ 
+	font-size:15px;  
+	font-weight:bold ;
+}
+.movie_list
+{
+	list-style:none;
+	margin-left: 50px;
+}
+.movie_list > li
+{
+	float : left;
+	margin-left : 20px;
+}
+.movie_list > li > img
+{
+	width : 180px;
+	height : 220px;
+}
+
+/*join page*/
+.join_title
+{
+	padding-top:100px;
+}
+.join_title > h1
+{
+	text-align:center;
+	font-size: 30px;
+}
+.join_section
+{
+	 background-color:black;
+	 height: 550px;
+	 padding-top:25px;
+}
+.join_index
+{
+	padding-left:50px;
+}
+.join_list
+{
+	background-color:black;
+	width:466px;
+	height:350px;
+	margin:auto;
+	font-size:20px;
+}
+.join_list > input
+{
+	margin-top: 5px;
+}
+.join_textbox1
+{
+	width:350px;
+	height:30px;
+}
+.join_textbox2
+{
+	width:457px;
+	height:30px;
+}
+.btn_joinbox
+{
+	width:100px;
+	height:36px;
+	padding-bottom:2.5px;
+}
+.join_radio
+{
+	background-color:black;
+	width:230px;
+	margin:auto;
+}
+.hobby 
+{
+	width:600px;
+	height:200px;
+	margin-left:250px;
+	padding-left:100px;
+	display:inline-block;
+	line-height:50px;
+}
+h3
+{
+	text-align:center;
+}
+.btn_join
+{
+	width:1200px;
+	padding-top:100px;
+	padding-bottom:40px;
+}
+.btn_join > input
+{
+	width: 465px;
+	height:36px;
+	margin-left:367px;
+	margin-top:15px;
+	margin-bottom:15px;
+	pont-size:20px;
+}
+
+/*login page css*/
+.login_box 
+{
+	height:550px; 
+	padding-left: 370px;
+	padding-top : 150px;
+}
+.login_in
+{
+	width:500px; 
+	height:500px; 
+	border:1px solid white; 
+}
+
+/*hobby*/
+.hobby_head
+{
+	position:sticky;
+	padding-top:50px;
+	height:120px;
+	z-index:10px;
+	top:0;
+	background-color:rgba(0, 0, 0, 0.8);
+}
+.hobby_head > p
+{
+	text-align:center;
+	font-size: 20px;
+}
+.hobby_head > h1
+{
+	text-align:center;
+}
+#wrap > .m_imgin >img
+{
+	width:200px;
+	height:250px;
+	padding-button:20px;
+	margin-left : 70px;
+}
+
+/*장르 체크박스*/
+.chbx_1
+{
+	margin-left:150px;
+}
+.btn_hobby
+{
+	position:sticky;
+	background-color:rgba(0, 0, 0, 0.8);
+	position: fixed; /* 이 부분을 고정 */
+	bottom: 0; /* 하단에 여백 없이 */
+	width: 1200px; /* 가로 사이즈를 브라우저에 가득 채움 */
+	height: 70px;
+}
+.btn_hobby > input
+{
+	margin-left:550px;
+	margin-top:15px;
+	padding-top:10px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:10px;
+}
+
+/*info page*/
+.info_top
+{
+	/*background-color:red;*/
+	border: 1px solid gold;
+	width: 1200px;
+	height:500px;
+	display:flex;
+}
+.info_post
+{
+	/*background-color:pink;*/
+	border: 1px solid gray;
+	width:400px;
+	height:440px;
+	margin-top:30px;
+	margin-left:30px;
+}
+.info_moviename
+{
+	/*background-color:yellow;*/
+	width:700px;
+	height:50px;
+	margin-top:30px;
+	margin-left:30px;
+}
+.info_maintext
+{
+	font-size :30px;
+	margin-left:10px;
+	margin-top:5px;
+}
+.info_subtext
+{
+	font-size :20px;
+	margin-left:10px;
+	margin-top:5px;
+}
+.info_summarytext
+{
+	font-size :15px;
+	margin-left:10px;
+	margin-top:5px;
+}
+.info_summary
+{
+	background-color:white;
+	width:700px;
+	height:180px;
+	margin-left:30px;
+}
+.info_hobby
+{
+	/*background-color:green;*/
+	border: 1px solid gray;
+	width:700px;
+	height:180px;
+	margin-left:30px;
+}
+.info_hobbylist
+{
+	/*background-color:orange;*/
+	width:680px;
+	height:150px;
+	margin-left:10px;
+	margin-top:3px;
+	display:flex;"
+}
+.info_gender
+{
+	/*background-color:white;*/
+	width:250px;
+	height:150px;
+	margin-left:10px;
+}
+.info_age
+{
+	/*background-color:yellow;*/
+	width:400px;
+	height:150px;
+	margin-left:10px;
+}

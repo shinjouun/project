@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>join</title>
+		<link rel="stylesheet" href="css/cving.css">
+	</head>
+	<body>
+		<div class="container">
+			<section class="join_title">
+				<h1>회원가입</h1>
+			</section>
+			<section class="join_section">
+				<form name="join" action="index.html" method="post">
+					<div class="join_list">
+						<input type="text" class="join_textbox1" name="user_ID" placeholder="아이디 입력">
+						<input type="button" class="btn_joinbox" name="user_IDcheck" value="아이디 확인">
+						<br><br>
+						<input type="password" class="join_textbox2" name="user_PW1"
+							 placeholder="비밀번호 입력">
+						<br><br>
+						<input type="password" class="join_textbox1" name="user_PW2"
+						 	placeholder="비밀번호 재입력">
+						<input type="button" class="btn_joinbox" name="user_PWcheck" value="비밀번호 확인">
+						<br><br>
+						<input type="text" class="join_textbox2" name="user_name" placeholder="이름">
+						<br><br>
+						<input type="text" class="join_textbox2" id="birth" name="birth"placeholder="생년월일 (YYYYMMDD)">
+						<br><br>
+						<!-- 라디오 박스 div 묶어놓음 -->
+						<div class="join_radio">
+							<input type="radio" name="gender" value="m" id="man">
+							<label for="man">남자</label>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="radio" name="gender" value="m" id="woman">
+							<label for="woman">여자</label>
+						</div>
+						<br><br>
+					</div>
+					<div class="btn_join">
+						<input type="button" name="btn_join" value="회원가입">
+					</div>
+				</form>
+			</section>
+		<footer>
+			<article class="foot_menu">
+				명칭: 주식회사 이젠 | 등록번호: 전북 소4048 | 등록연월일: 2022. 10. 14 | 제호: CVING<br>
+				발행: C team  | 발행소: 전라북도 전주시 덕진구 금암동 이젠컴퓨터학원 4층 407호<br>
+				CVING의 콘텐츠는 저작권법의 보호를 받으므로, 무단 전재, 복사, 배포 등을 금합니다.<br>
+			</article>
+		</footer>
+		</div>
+	</body>
+</html>

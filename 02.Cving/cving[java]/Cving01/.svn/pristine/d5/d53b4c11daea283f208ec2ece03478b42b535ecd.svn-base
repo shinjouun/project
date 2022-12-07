@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="EUC-KR">
+		<title>hobby</title>
+		<link rel="stylesheet" href="css/cving.css">
+	</head>
+	<body>
+		<div class="container">
+			<section class="hobby_head">
+				<p> 나만을 위한 콘텐츠를 추천 받아보세요.</p>
+				<h1> 관심장르 영화 3개 이상의 콘텐츠를 선택 하세요.</h1>
+			</section>
+			<div id="wrap">
+				<div class="m_imgin">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+				</div>
+				<div class="box">
+					<input type="checkbox" class="chbx_1" name="drama" value="드라마">드라마
+					<input type="checkbox" style="margin-left:170px; name="mellow" value="멜로/로맨스">멜로/로맨스
+					<input type="checkbox" style="margin-left:200px; name="cult" value="컬트">컬트
+					<input type="checkbox" style="margin-left:200px; name="mystery" value="미스터리">미스터리
+				</div>
+				<div class="m_imgin">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+				</div>
+				<div class="box">
+					<input type="checkbox" class="chbx_1" name="erotic" value="에로">에로
+					<input type="checkbox" style="margin-left:220px;"name="experiment" value="실험">실험
+					<input type="checkbox" style="margin-left:220px; name="fantasy" value="판타지">판타지
+					<input type="checkbox" style="margin-left:210px; name="adventure" value="모험">모험
+				</div>
+				<div class="m_imgin">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+				</div>
+				<div class="box">
+					<input type="checkbox" class="chbx_1" name="documentary" value="다큐멘터리">다큐멘터리
+					<input type="checkbox" style="margin-left:170px; name="war" value="전쟁">전쟁
+					<input type="checkbox" style="margin-left:220px; name="sf" value="SF">SF
+					<input type="checkbox" style="margin-left:230px; name="suspense" value="서스펜스">서스펜스
+				</div>
+				<div class="m_imgin">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+				</div>
+				<div class="box">
+					<input type="checkbox" class="chbx_1" name="liveperformance" value="공연실황">공연실황
+					<input type="checkbox" style="margin-left:180px; name="cult" value="컬트">컬트
+					<input type="checkbox" style="margin-left:220px; name="west" value="서부">서부
+					<input type="checkbox" style="margin-left:230px; name="thriller" value="스릴러">스릴러
+				</div>
+				<div class="m_imgin">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+				</div>
+				<div class="box">
+					<input type="checkbox" class="chbx_1" name="comedy" value="코미디">코미디
+					<input type="checkbox" style="margin-left:180px; name="anime" value="애니메이션">애니메이션
+					<input type="checkbox" style="margin-left:190px; name="action" value="액션">액션
+					<input type="checkbox" style="margin-left:220px; name="epic" value="서사">서사
+				</div>
+				<div class="m_imgin">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+				</div>
+				<div class="box">
+					<input type="checkbox" class="chbx_1" name="horror" value="공포">공포
+					<input type="checkbox" style="margin-left:200px; name="noir" value="느와르">느와르
+					<input type="checkbox" style="margin-left:210px; name="family" value="가족">가족
+					<input type="checkbox" style="margin-left:220px; name="crime" value="범죄">범죄
+				</div>
+				<div class="m_imgin">
+					<img src="./img/movie_image.jpg">
+					<img src="./img/movie_image.jpg">
+				</div>
+				<div class="box">
+					<input type="checkbox" class="chbx_1" name="martialarts" value="무협">무협
+					<input type="checkbox" style="margin-left:200px; name="blackcomedy" value="블랙코미디">블랙코미디
+				</div>
+			</div>
+			<div class="btn_hobby">
+				<input type="button" name="btn_hobby" value="완료">
+			</div>
+			<footer>
+			<article class="foot_menu">
+				명칭: 주식회사 이젠 | 등록번호: 전북 소4048 | 등록연월일: 2022. 10. 14 | 제호: CVING<br>
+				발행: C team  | 발행소: 전라북도 전주시 덕진구 금암동 이젠컴퓨터학원 4층 407호<br>
+				CVING의 콘텐츠는 저작권법의 보호를 받으므로, 무단 전재, 복사, 배포 등을 금합니다.<br>
+			</article>
+			</footer>
+		</div>
+	</body>
+</html>

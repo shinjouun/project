@@ -1,0 +1,200 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="./config/config.jsp"%>
+<%
+UserVO LoginVO = (UserVO)session.getAttribute("login");
+if(LoginVO == null)
+{
+	response.sendRedirect("login.jsp");
+	return;
+}
+DBManager db = new DBManager();
+db.DBOpen();
+
+
+System.out.println(LoginVO.getUgender());
+String sql = "";
+sql = "select hobby from hobby where uno = " + LoginVO.getUno();
+db.OpenQuery(sql);
+String hobby = "";
+while(db.GetNext())
+{
+	if(hobby != "") hobby += ",";
+	hobby += db.GetValue("hobby");
+}
+System.out.println(hobby);
+String realhobby[] = hobby.split(",");
+db.CloseQuery();
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>CVING</title>
+<link rel="stylesheet"href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="css/cving.css">
+<script src="./jquery-3.6.0.js"></script>
+</head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script>
+		$(document).ready(function(){
+			$('.slider').bxSlider({
+		        mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+		        pager: false, // 페이지 표시 보여짐
+		        minSlides : 5,
+		        maxSlides : 5,
+		        slideMargin : 1,
+		        slideWidth : 1200,
+		        moveSlides : 1,
+		        infiniteLoop : true,
+		        hideControlOnEnd: true,
+		        caption: true,
+		        touchEnabled : (navigator.maxTouchPoints > 0),
+			});
+		});
+	</script>
+
+<body>
+	<div class="container">
+		<header id="header">
+			<div class="logo">
+				<a href="#"> <img src="./img/logoback.png"
+					style="width: 100%; height: 100%;">
+				</a>
+			</div>
+			<div class="logout">
+				<a href="./login.jsp">로그아웃</a>
+			</div>
+			<div class="search">
+				<input type="text"> <a href="./search.jsp">검색</a>
+			</div>
+		</header>
+		<div class="top">
+			<article class="movie_1">
+				장르별 추천 영화
+				<ul class="slider">
+					<%
+					sql = "";
+					sql += "select mcode, mhobby, mscore, mimg from movie ";
+					sql += "where 1=1 ";
+					sql += "and mscore < 9.50 ";
+					//sql += "and mscore > 9.0 ";
+					sql += "and used = 'Y' ";
+					String sub_sql = "";
+					for(int i = 0 ; i < realhobby.length ; i++)
+					{
+						if( !sub_sql.equals("") )
+							sub_sql += " or ";
+								
+						sub_sql += " mhobby in (select mhobby from genre where mhobby like '%"+ realhobby[i] +"%') ";						
+					}
+					if( !sub_sql.equals("") )
+					{
+						sql += " and ( " + sub_sql + ") ";
+					}
+					sql += "order by mscore desc limit 0, 20 ";
+					db.OpenQuery(sql);
+					while(db.GetNext())
+					{
+						String mcode = db.GetValue("mcode");
+						String mhobby = db.GetValue("mhobby");
+						String mscore = db.GetValue("mscore");
+						String mimg = db.GetValue("mimg");
+						if(mimg.equals("없음"))
+						{
+							%>
+							<li><a href="./info.jsp"><img src="./img/img_null.png"></a></li>
+							<%
+						}
+						else
+						{
+							%>
+							<li><a href="./info.jsp"><img src=<%=mimg%>></a></li>
+							<%
+						}
+					}
+					db.CloseQuery();
+					%>
+				</ul>
+			</article>
+			<article class="movie_2">
+				<%
+				if(LoginVO != null && LoginVO.getUgender().equals("M")) 
+				{
+					%>
+					남자들이 선호하는 영화
+					<% 
+				}else
+				{
+					%>
+					여자들이 선호하는 영화
+					<%
+				}
+				%>
+				<ul class="slider">
+					<li><a href="./info.jsp"><img
+							src="./img/movie_image1.jpg" style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/noir.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/thriller.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/suspense.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/martialarts.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/sf.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/horror.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/blackcomedy.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/war.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/west.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+				</ul>
+			</article>
+			<article class="movie_3">
+				인기 영화
+				<ul class="slider">
+					<li><a href="./info.jsp"><img src="./img/mellow.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/epic.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/horror.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/fantasy.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/crime.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/animation.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/adventure.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/family.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/drama.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+					<li><a href="./info.jsp"><img src="./img/west.jpg"
+							style="width: 180px; height: 250px;"></a></li>
+				</ul>
+			</article>
+		</div>
+		<footer>
+			<article class="foot_menu">
+				<hr style="background-color: white;">
+				명칭: 주식회사 이젠 | 등록번호: 전북 소4048 | 등록연월일: 2022. 10. 14 | 제호: CVING<br>
+				발행: C team | 발행소: 전라북도 전주시 덕진구 금암동 이젠컴퓨터학원 4층 407호<br> CVING의
+				콘텐츠는 저작권법의 보호를 받으므로, 무단 전재, 복사, 배포 등을 금합니다.<br>
+			</article>
+		</footer>
+	</div>
+</body>
+</html>
+<%
+db.DBClose();
+%>

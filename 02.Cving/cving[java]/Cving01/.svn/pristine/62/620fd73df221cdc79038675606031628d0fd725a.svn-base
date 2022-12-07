@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>CVING</title>
+	<link rel="stylesheet" href="css/cving.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('.slider').bxSlider({
+		        mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+		        pager: true, // 페이지 표시 보여짐
+		        minSlides : 4,
+		        maxSlides : 4,
+		        slideMargin : 1,
+		        slideWidth : 800,
+		        moveSlides : 1,
+		        infiniteLoop : false,
+		        hideControlOnEnd: true,
+		        caption: true,
+			});
+		});
+	</script>
+
+	<body>
+		<div class="container">
+			<header>
+				<div class="logo">
+					<a href="#">
+					<img src="./img/cving.png" style="width:100%; height:100%;">
+					</a>
+				</div>
+				<div class="logout">
+					<a href="#">로그아웃</a>
+				</div>				
+				<div class="search">
+					<input type="text">
+					<a href="#">검색</a>
+				</div>	
+			</header>
+			<div class="top">
+				<article class= "movie_1">
+				추천영화
+					<ul class="slider">
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+					</ul>
+				</article>
+				<article class= "movie_2">
+				인기영화
+					<ul class="movie_list">
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+					</ul>
+				</article>
+				<article class= "movie_3">
+				개봉예정작
+					<ul class="movie_list">
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+					</ul>
+				</article>
+			</div>
+				<footer>
+					<article class="foot_logo">	하단로고</article>
+					<article class="foot_menu">	하단설명</article>
+				</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>CVING</title>
+	<link rel="stylesheet" href="css/cving.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('.slider').bxSlider({
+		        mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+		        pager: true, // 페이지 표시 보여짐
+		        minSlides : 4,
+		        maxSlides : 4,
+		        slideMargin : 1,
+		        slideWidth : 800,
+		        moveSlides : 1,
+		        infiniteLoop : false,
+		        hideControlOnEnd: true,
+		        caption: true,
+			});
+		});
+	</script>
+
+	<body>
+		<div class="container">
+			<header>
+				<div class="logo">
+					<a href="#">
+					<img src="./img/blackcving.png" style="width:100%; height:100%;">
+					</a>
+				</div>
+				<div class="logout">
+					<a href="./login.html">로그아웃</a>
+				</div>				
+				<div class="search">
+					<input type="text">
+					<a href="#">검색</a>
+				</div>	
+			</header>
+			<div class="top">
+				<article class= "movie_1">
+				추천영화
+					<ul class="slider">
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+						<li><img src="./img/movie_image.jpg" style="width:180px; height:220px;"></li>
+					</ul>
+				</article>
+				<article class= "movie_2">
+				인기영화
+					<ul class="movie_list">
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+					</ul>
+				</article>
+				<article class= "movie_3">
+				개봉예정작
+					<ul class="movie_list">
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+						<li><img src="./img/movie_image.jpg"></li>
+					</ul>
+				</article>
+			</div>
+				<footer>
+					<article class="foot_menu">
+						명칭: 주식회사 이젠 | 등록번호: 전북 소4048 | 등록연월일: 2022. 10. 14 | 제호: CVING<br>
+						발행: C team  | 발행소: 전라북도 전주시 덕진구 금암동 이젠컴퓨터학원 4층 407호<br>
+						CVING의 콘텐츠는 저작권법의 보호를 받으므로, 무단 전재, 복사, 배포 등을 금합니다.<br>
+					</article>
+				</footer>
+		</div>
+	</body>
+</html>

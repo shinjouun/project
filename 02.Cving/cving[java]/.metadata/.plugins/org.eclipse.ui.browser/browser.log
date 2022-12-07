@@ -1,0 +1,36 @@
+
+11월 10, 2022 12:22:10.69 NEW SESSION
+11월 10, 2022 12:22:10.69 [8628:10920:1110/122210.691:ERROR:device_event_log_impl.cc(215)] [12:22:10.691] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+11월 15, 2022 12:03:08.24 NEW SESSION
+11월 15, 2022 12:03:08.24 [6672:11744:1115/120308.247:ERROR:device_event_log_impl.cc(215)] [12:03:08.248] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 15, 2022 12:04:13.59 [6672:11744:1115/120413.594:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 15, 2022 12:04:52.26 [6672:11744:1115/120452.260:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 15, 2022 12:05:06.61 [6672:11744:1115/120506.617:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 15, 2022 12:42:19.22 [6672:11744:1115/124219.219:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 15, 2022 12:47:13.03 [6672:11744:1115/124713.031:ERROR:interface_endpoint_client.cc(690)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 15, 2022 12:47:35.66 [6672:11744:1115/124735.663:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 15, 2022 12:51:42.88 [6672:11744:1115/125142.888:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 15, 2022 14:59:05.08 [6672:11744:1115/145905.080:ERROR:device_event_log_impl.cc(215)] [14:59:05.080] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 15, 2022 16:24:13.93 [6672:11744:1115/162413.934:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 15, 2022 17:44:46.69 [6672:11744:1115/174446.698:ERROR:interface_endpoint_client.cc(690)] Message 0 rejected by interface blink.mojom.WidgetHost
+
+11월 16, 2022 14:00:46.88 NEW SESSION
+11월 16, 2022 14:00:46.88 [9900:7792:1116/140046.880:ERROR:device_event_log_impl.cc(215)] [14:00:46.881] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 16, 2022 14:01:33.77 [11496:2124:1116/140133.778:ERROR:device_event_log_impl.cc(215)] [14:01:33.778] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 16, 2022 14:11:13.25 [3056:11620:1116/141113.256:ERROR:device_event_log_impl.cc(215)] [14:11:13.256] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 16, 2022 14:36:53.55 [3056:11620:1116/143653.556:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 16, 2022 14:36:53.55 [3056:11620:1116/143653.556:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 16, 2022 14:47:24.97 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 16, 2022 14:48:38.91 [8100:9660:1116/144838.916:ERROR:device_event_log_impl.cc(215)] [14:48:38.915] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+11월 17, 2022 10:44:29.75 NEW SESSION
+11월 17, 2022 10:44:29.75 [1100:10544:1117/104429.747:ERROR:device_event_log_impl.cc(215)] [10:44:29.747] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 17, 2022 14:05:31.20 [1100:10544:1117/140531.208:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 17, 2022 14:05:31.20 [1100:10544:1117/140531.208:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 17, 2022 14:05:31.20 [1100:10544:1117/140531.208:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 17, 2022 15:12:02.12 [1100:10544:1117/151202.124:ERROR:device_event_log_impl.cc(215)] [15:12:02.124] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 17, 2022 17:17:46.68 [1100:10544:1117/171746.687:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 17, 2022 17:17:46.68 [1100:10544:1117/171746.687:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 17, 2022 17:17:46.68 [1100:10544:1117/171746.687:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 17, 2022 17:17:46.68 [1100:10544:1117/171746.687:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost

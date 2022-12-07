@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>CVING</title>
+	<link rel="stylesheet" href="css/cving.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="login_box">
+				<div class="login_in">
+					<img src="./img/cving.png" style="width:250px; height:100px; margin-left:120px;">
+					<form id="login" name="login" method="post" action"">
+						<div align="center" style="margin-top:20px;">
+							<input type="text" id="id" name="id" placeholder="아이디"
+								maxlength="41" value="" style="height:35px; width:350px;">
+						</div>
+						<br>
+						<div align="center">
+							<input type="password" id="pw" name="pw" placeholder="비밀번호"
+								maxlength="16" style="height:35px; width:350px;" >
+					    </div>
+					    <br><br><br>
+						<div align="center">
+							<input type="submit" id="btn_login" name="btn_login" value="로그인 하기"
+								style="height:30px; width:360px;" >
+					    </div>
+					    <br>
+						<div align="center">
+							<input type="button"btn_login" name="btn_login" value="회원가입 하기"
+								style="height:30px; width:360px;" >
+					    </div>
+					</form>
+				</div>
+			</div> 
+			<footer>
+					<article class="foot_logo">	하단로고</article>
+					<article class="foot_menu">	하단설명</article>
+			</footer>
+		</div>
+	</body>
+</html>

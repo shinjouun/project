@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>CVING</title>
+	<link rel="stylesheet" href="css/cving.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('.slider').bxSlider({
+		        mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+		        pager: true, // 페이지 표시 보여짐
+		        minSlides : 4,
+		        maxSlides : 4,
+		        slideMargin : 1,
+		        slideWidth : 800,
+		        moveSlides : 1,
+		        infiniteLoop : false,
+		        hideControlOnEnd: true,
+		        caption: true,
+			});
+		});
+	</script>
+	<body>
+		<div class="container">
+			<header>
+				<div class="logo">
+					<a href="#">
+					<img src="./img/blackcving.png" style="width:100%; height:100%;">
+					</a>
+				</div>
+				<div class="logout">
+					<a href="#">로그아웃</a>
+				</div>				
+				<div class="search">
+					<input type="text">
+					<a href="#">검색</a>
+				</div>	
+			</header>
+			<div class="info_top">
+				<div class="info_post">
+					영화포스터 나오는 부분
+				</div>
+				<div>
+					<!-- 영화제목 -->
+					<div class="info_moviename">
+						<font class="info_maintext"><b>영화제목</b></font>
+					</div>
+					<!-- 영화평점 및 장르 등 -->
+					<div style="background-color:pink; width:700px; height:30px;
+						margin-left:30px;">
+						<font class="info_subtext">
+						영화평점 | 장르 | 시간(130분) | 15세 관람가</font>
+					</div>
+					<!-- 영화 줄거리 -->
+					<div class="info_summary">
+						<font class="info_subtext"><b>줄거리</b></font>
+						<div class="info_textdiv"style="background-color:pink; width:680px; height:150px; margin-left:10px;">
+							<font class="info_summarytext" style="line-height:20px; margin-left:0;">
+							줄<br>
+							거<br>
+							리 내용입니다.</font>
+						</div>
+					</div>
+					<!-- 성별 나이별 관람 추이 -->
+					<div class="info_hobby">
+						<font class="info_subtext"><b>성별 나이별 관람 추이</b></font>
+						<div class="info_hobbylist">
+							<!-- 성별 그래프 표시부분 -->
+							<div class="info_gender">
+							성별그래프그린것
+							</div>
+							<!-- 나이별 그래프 표시부분 -->
+							<div class="info_age">
+							나이별그래프그린것
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<footer>
+					<article class="foot_menu">
+						명칭: 주식회사 이젠 | 등록번호: 전북 소4048 | 등록연월일: 2022. 10. 14 | 제호: CVING<br>
+						발행: C team  | 발행소: 전라북도 전주시 덕진구 금암동 이젠컴퓨터학원 4층 407호<br>
+						CVING의 콘텐츠는 저작권법의 보호를 받으므로, 무단 전재, 복사, 배포 등을 금합니다.<br>
+					</article>
+				</footer>
+		</div>
+	</body>
+</html>

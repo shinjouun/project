@@ -1,0 +1,111 @@
+@charset "EUC-KR";
+body 
+{
+	margin : 0;
+	padding: 0;
+	background-color: #fff;
+	color: #222;
+}
+.container
+{
+	border: 1px solid red;
+	width: 1200px;
+	margin: auto;
+}
+header
+{
+	border : 1px solid black;
+	height : 100px;
+	display: flex;
+			justify-content: space-between;
+}
+.logo
+{
+	border: 1px solid gold;
+	width: 200px;
+	height: 100px;
+}
+.topmenu
+{
+	border: 1px solid gold;
+	width: 900px;
+	height: 100px;
+}
+
+.movie
+{
+	border: 1px solid blue;
+	width: 1200px;
+	height: 900px;
+}
+.movie1
+{
+	border: 1px solid green;
+	height:300px;
+}
+.movie2
+{
+	border: 1px solid green;
+	height:300px;
+}
+.movie3
+{
+	border: 1px solid green;
+	height:300px;
+}
+footer
+{
+	border: 1px solid orange;
+	height: 200px;
+}
+.foot_logo
+{
+	border: 1px solid skyblue;
+	width:200px;
+	height:200px;
+	float:left;
+}
+.foot_menu
+{
+	border: 1px solid violet;
+	width:990px;
+	height:200px;
+	float:right;
+}
+.logout
+{
+	padding-top:35px; 
+	margin-left:500px;
+}
+.logout > a
+{
+	color:red; 
+	font-size:15px;  
+	font-weight:bold ;
+}
+.search
+{
+	padding-top:35px; 
+	margin-right:20px;
+}
+.search > a
+{ 
+	font-size:15px;  
+	font-weight:bold ;
+}
+.movie_list
+{
+	list-style:none;
+	margin-left: 50px;
+}
+
+.movie_list > li
+{
+	float : left;
+	margin-left : 20px;
+}
+.movie_list > li > img
+{
+	width : 180px;
+	height : 220px;
+}

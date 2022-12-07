@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>join</title>
+		<link rel="stylesheet" href="css/cving.css">
+	</head>
+	<body>
+		<div class="container">
+			<section class="join_title">
+				<h1>회원가입 페이지</h1>
+			</section>
+			<section class="join_index">
+				<form name="join" action="index.html" method="post">
+					<div class="join_list">
+						아이디
+						<br>
+						<input type="text" name="user_ID" placeholder="아이디 입력" >
+						<input type="button" name="user_IDcheck" value="아이디 확인">
+						<br>
+						비밀번호
+						<br> 
+						<input type="password" name="user_PW1" value="123456">
+						<br>
+						비밀번호 재확인
+						<br> 
+						<input type="password" name="user_PW2" value="123456">
+						<input type="button" name="user_PWcheck" value="비밀번호 재확인">
+						<br><br>
+						이름
+						<br>
+						<input type="text" name="user_name" value="">
+						<br>
+						생년월일
+						<br> 
+						<input type="text" id="birth" name="birth"placeholder="YYYYMMDD">
+						<br><br>
+						성별
+						<br>  
+						<label for="man">남자</label>
+						<input type="radio" name="gender" value="m" id="man">
+						<label for="woman">여자</label>
+						<input type="radio" name="gender" value="m" id="woman">
+						<br><br>
+					</div>
+					<h3>관심사</h3>
+					<div class="hobby">
+						&nbsp;
+						<br> 
+						<input type="checkbox" name="drama" value="드라마">드라마&nbsp;
+						<input type="checkbox" name="mellow" value="멜로/로맨스">멜로/로맨스&nbsp;
+						<input type="checkbox" name="cult" value="컬트">컬트&nbsp;
+						<input type="checkbox" name="mystery" value="미스터리">미스터리&nbsp;
+						<input type="checkbox" name="musical" value="뮤지컬">뮤지컬&nbsp;
+						&nbsp;
+						<br>
+						<input type="checkbox" name="erotic" value="에로">에로&nbsp;
+						<input type="checkbox" name="experiment" value="실험">실험&nbsp;
+						<input type="checkbox" name="fantasy" value="판타지">판타지&nbsp;
+						<input type="checkbox" name="adventure" value="모험">모험&nbsp;
+						<input type="checkbox" name="documentary" value="다큐멘터리">다큐멘터리&nbsp;
+						&nbsp;
+						<br>
+						<input type="checkbox" name="war" value="전쟁">전쟁&nbsp;
+						<input type="checkbox" name="sf" value="SF">SF&nbsp;
+						<input type="checkbox" name="suspense" value="서스펜스">서스펜스&nbsp;
+						<input type="checkbox" name="liveperformance" value="공연실황">공연실황&nbsp;
+						<input type="checkbox" name="west" value="서부">서부&nbsp;
+						&nbsp;
+						<br>
+						<input type="checkbox" name="thriller" value="스릴러">스릴러&nbsp;
+						<input type="checkbox" name="comedy" value="코미디">코미디&nbsp;
+						<input type="checkbox" name="anime" value="애니메이션">애니메이션&nbsp;
+						<input type="checkbox" name="action" value="액션">액션&nbsp;
+						<input type="checkbox" name="epic" value="서사">서사&nbsp;
+						&nbsp;
+						<br>
+						<input type="checkbox" name="horror" value="공포">공포&nbsp;
+						<input type="checkbox" name="noir" value="느와르">느와르&nbsp;
+						<input type="checkbox" name="family" value="가족">가족&nbsp;
+						<input type="checkbox" name="crime" value="범죄">범죄&nbsp;
+						<input type="checkbox" name="martialarts" value="무협">무협&nbsp;
+						<input type="checkbox" name="blackcomedy" value="블랙코미디">블랙코미디&nbsp;
+						&nbsp;
+						<br><br>
+					</div>
+				</form>
+			</section>
+		</div>
+	</body>
+</html>

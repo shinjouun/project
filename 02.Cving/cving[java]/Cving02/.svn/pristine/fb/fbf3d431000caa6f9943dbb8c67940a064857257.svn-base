@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="./config/config.jsp"%>
+<%
+String id = request.getParameter("id"); //매개변수 요청 !!
+String pw = request.getParameter("pw");
+
+DBManager db = new DBManager();
+db.DBOpen();
+
+String sql="";
+sql  = "select uno, uid, uname, ugender from user ";
+sql += "where uid = '" + id + "' and upw = md5('" + pw + "') "; //매개변수로받은 아이디와 매개변수로받은 비번이 유저테이블에있는 아이디와비번이 일치할때   user테이블에서필요한 그정보를불불러오는것!
+db.OpenQuery(sql); //셀렉트는 무조건 오픈쿼리 !!
+if(db.GetNext() == true)	
+{
+	//로그인이 됐을 때
+	String uno = db.GetValue("uno");
+	UserVO vo = new UserVO();
+	
+	vo.setUno(uno);
+	vo.setUgender(db.GetValue("ugender"));
+	vo.setUname(db.GetValue("uname"));
+	session.setAttribute("login",vo);
+	
+	sql  = "select * from hobby ";
+	sql += "where uno = " + uno;
+	db.OpenQuery(sql);
+	if(db.GetNext() == true)  //다음 열이 있으면 ~(검색된 값이 있으면 )
+	{
+		//두번째이상 로그인했을때
+		response.sendRedirect("index.jsp"); //요청 페이지로 가달라고 요청하는것 !
+	}
+	else
+	{ 	
+		//처음 로그인했을때
+		response.sendRedirect("hobby.jsp");
+		
+	}
+	db.CloseQuery();
+}
+else
+{
+	%>
+	<script>
+		alert("아이디 비밀번호가 일치하지 않습니다");
+		document.location = "login.jsp";
+	</script>
+	<%
+}
+	
+db.CloseQuery();
+db.DBClose();
+
+%>

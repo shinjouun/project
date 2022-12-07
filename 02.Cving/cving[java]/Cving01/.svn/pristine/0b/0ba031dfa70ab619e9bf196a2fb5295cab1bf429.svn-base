@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>CVING</title>
+	<link rel="stylesheet" href="css/cving.css">
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="logo"><a href="#"><img src="./img/cving.png" style="width:100%; height:100%;"></a></div>
+				<div class="logout"><a href="#">로그아웃</a></div>				
+				<div class="search">
+				<input type="text">
+				<a href="#">검색</a>
+				</div>	
+			</header>
+			<div class="top">
+				<section class="movie">
+					<article class= "movie1">
+					추천영화
+						<ul class="movie_list">
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+						</ul>
+					</article>
+					<article class= "movie2">
+					인기영화
+						<ul class="movie_list">
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+						</ul>
+					</article>
+					<article class= "movie3">
+					개봉예정작
+						<ul class="movie_list">
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+							<li><img src="./img/movie_image.jpg"></li>
+						</ul>
+					</article>
+				</section>
+			</div>
+				<footer>
+					<article class="foot_logo">	하단로고</article>
+					<article class="foot_menu">	하단설명</article>
+				</footer>
+		</div>
+	</body>
+</html>
